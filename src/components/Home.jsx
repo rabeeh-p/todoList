@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const Home = ({ todo, setTodo, setSelectedTodo }) => {
+const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
     
     let [note,setNote]= useState('')
     const navigate = useNavigate();
-    const [urgent, setUrgent] = useState([]);
+    
 
     let typingWord = (e)=>{
         console.log('hello',e.target.value);
