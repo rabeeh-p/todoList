@@ -5,6 +5,7 @@ const Home = ({ todo, setTodo, setSelectedTodo }) => {
     
     let [note,setNote]= useState('')
     const navigate = useNavigate();
+    const [urgent, setUrgent] = useState([]);
 
     let typingWord = (e)=>{
         console.log('hello',e.target.value);
@@ -20,10 +21,17 @@ const Home = ({ todo, setTodo, setSelectedTodo }) => {
 
       const handleEdit = (item) => {
         console.log(item,'itemmmmmm');
-        
         setSelectedTodo(item);
         navigate('/edit'); 
       };
+
+      const toggleUrgent = (index) => {
+        let newUrgent = [...urgent];
+        newUrgent[index] = !newUrgent[index];
+        setUrgent(newUrgent);
+      };
+
+
   return (
     <div className="app">
       <div className="mainHeading">
@@ -39,7 +47,10 @@ const Home = ({ todo, setTodo, setSelectedTodo }) => {
           return(
             <div className="todo" key={index}>
           <div className="left">
-            <input type="checkbox" name="" id="" />
+            <input 
+             type="checkbox"
+             checked={urgent[index] || false}
+             onChange={() => toggleUrgent(index)} />
             <p> {item}</p>
           </div>
           <div className="right">
@@ -51,6 +62,16 @@ const Home = ({ todo, setTodo, setSelectedTodo }) => {
         })}
         
       </div>
+      {urgent.some((isUrgent) => isUrgent) && (
+        <div className="urgentWork">
+          <h2>Urgent Work</h2>
+          <ul>
+            {todo.map((item, index) => urgent[index] && <li key={index}>{item}</li>)}
+          </ul>
+        </div>
+      )}
+
+      
     </div>
   )
 }

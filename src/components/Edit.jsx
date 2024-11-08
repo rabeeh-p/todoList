@@ -8,7 +8,7 @@ function EditPage({ todo, setTodo, selectedTodo }) {
   
 
   const handleSave = () => {
-    const updatedTodos = todo.map((item) => (item === selectedTodo ? newNote : null));
+    const updatedTodos = todo.map((item) => (item === selectedTodo ? newNote : item));
     if (newNote.trim() === '') {
       let message = 'empty';
       alert(message); 
