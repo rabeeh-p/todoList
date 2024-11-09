@@ -17,8 +17,9 @@ function EditPage({ todo, setTodo, selectedTodo }) {
     setTodo(updatedTodos);  
     navigate('/'); 
   };
-
   
+
+
     return (
       <div className="edit-page">
         <h2>Edit Todo</h2>
