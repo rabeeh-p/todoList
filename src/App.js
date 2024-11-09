@@ -16,11 +16,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home todo={todo} setTodo={setTodo} setSelectedTodo={setSelectedTodo} urgent={urgent} 
-      setUrgent={setUrgent}/>}/>
+        <Route path='/' element={<Home todo={todo} setTodo={setTodo} setSelectedTodo={setSelectedTodo} urgent={urgent} setUrgent={setUrgent}/>}/>
+
         <Route path='/edit' element={<Edit todo={todo} setTodo={setTodo} selectedTodo={selectedTodo} />}/>
     
-      </Routes>
+      </Routes>  
     </Router>
     
   );
