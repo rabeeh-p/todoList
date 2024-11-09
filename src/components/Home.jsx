@@ -16,6 +16,8 @@ const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
         if (note.trim() !== ''){
           setTodo([...todo,note])
           setNote('')
+          console.log(urgent,'icon');
+          
         }
       }
 
@@ -26,15 +28,19 @@ const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
       };
 
       const toggleUrgent = (index) => {
+
         let newUrgent = [...urgent];
         newUrgent[index] = !newUrgent[index];
+        console.log(newUrgent,'new urgent');
+        
         setUrgent(newUrgent);
       };
 
+      
 
   return (
     <div className="app">
-      <div className="mainHeading">
+      <div className="mainHeading">    
         <h1>ToDo List</h1>
       </div>
       
@@ -57,7 +63,6 @@ const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
               <i onClick={() => handleEdit(item)} className="fas fa-edit"></i>
             </div>
         </div>
-
           )
         })}
         

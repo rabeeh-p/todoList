@@ -14,10 +14,11 @@ function EditPage({ todo, setTodo, selectedTodo }) {
       alert(message); 
       return;
     }
-    setTodo(updatedTodos);
+    setTodo(updatedTodos);  
     navigate('/'); 
   };
 
+  
     return (
       <div className="edit-page">
         <h2>Edit Todo</h2>
