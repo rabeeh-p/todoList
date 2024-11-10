@@ -72,6 +72,7 @@ const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
           <h2>Urgent Work</h2>
           <ul>
             
+
             
             {todo.map((item, index) => urgent[index] && <li key={index}>{item}</li>)}
           </ul>
