@@ -49,7 +49,7 @@ const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
         <i onClick={clickedIcon} className="fas fa-plus"></i>
       </div>
       <div className="todos">
-        {Array.isArray(todo) && todo.map((item,index)=>{
+        { todo.map((item,index)=>{
           return(
             <div className="todo" key={index}>
           <div className="left">
@@ -71,10 +71,7 @@ const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
         <div className="urgentWork">
           <h2>Urgent Work</h2>
           <ul>
-            
-
-
-            
+          
             {todo.map((item, index) => urgent[index] && <li key={index}>{item}</li>)}
           </ul>
         </div>
