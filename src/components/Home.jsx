@@ -11,10 +11,12 @@ const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
         console.log('hello',e.target.value);
         setNote(e.target.value)
       }
+      
     
       let clickedIcon = ()=>{
         if (note.trim() !== ''){
           setTodo([...todo,note])
+          setUrgent([...urgent, false]);
           setNote('')
           console.log(urgent,'icon');
           
@@ -28,14 +30,21 @@ const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
       };
 
       const toggleUrgent = (index) => {
-
         let newUrgent = [...urgent];
         newUrgent[index] = !newUrgent[index];
         console.log(newUrgent,'new urgent');
-        
         setUrgent(newUrgent);
       };
 
+      const handleDelete = (index) => {
+        const newTodos = [...todo];
+        const newUrgent = [...urgent];
+        newTodos.splice(index, 1);
+        newUrgent.splice(index, 1);
+    
+        setTodo(newTodos);
+        setUrgent(newUrgent);
+      };
       
 
   return (
@@ -61,6 +70,7 @@ const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
           </div>
           <div className="right">
               <i onClick={() => handleEdit(item)} className="fas fa-edit"></i>
+              <i onClick={() => handleDelete(index)} style={{marginLeft:'10px'}} className="fas fa-trash"></i>
             </div>
         </div>
           )
