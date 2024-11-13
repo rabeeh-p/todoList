@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 function EditPage({ todo, setTodo, selectedTodo }) {
   const [newNote, setNewNote] = useState(selectedTodo || '');
   const navigate = useNavigate();
-  console.log(newNote,'neww');
   
 
   const handleSave = () => {
@@ -19,6 +18,7 @@ function EditPage({ todo, setTodo, selectedTodo }) {
   };
   
 
+  
 
     return (
       <div className="edit-page">
