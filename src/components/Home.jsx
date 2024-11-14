@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import Counter from './Counter';
 
 const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
     
@@ -23,6 +24,7 @@ const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
         }
       }
 
+      
       const handleEdit = (item) => {
         console.log(item,'itemmmmmm');
         setSelectedTodo(item);
@@ -86,6 +88,8 @@ const Home = ({ todo, setTodo, setSelectedTodo,urgent, setUrgent}) => {
           </ul>
         </div>
       )}
+
+      <Counter/>
 
       
     </div>
